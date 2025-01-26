@@ -1,0 +1,4 @@
+import cool-guy-font
+
+def python_is_a_fuck():
+    print("hi")
