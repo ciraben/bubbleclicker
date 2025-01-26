@@ -1,10 +1,11 @@
 import arcade
+from bubbles import BasicBubble
 
 class BaseView(arcade.View):
     def setup(self):
         self.bubbles = arcade.SpriteList()
 
-        new_bubble = arcade.Sprite("art/mainbubble.png")
+        new_bubble = BasicBubble()
         new_bubble.position = self.center
         self.bubbles.append(new_bubble)
 
