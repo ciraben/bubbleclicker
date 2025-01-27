@@ -1,8 +1,10 @@
 import arcade.gui
+from constants import *
 
 class GameUI(arcade.gui.UIAnchorLayout):
     def __init__(self):
         super().__init__()
+        self.with_padding(all = UI_GLOBAL_PADDING)
         self.add_points_sidebar()
 
     def add_points_sidebar(self):
