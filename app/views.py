@@ -3,7 +3,7 @@ import arcade.gui
 import random
 from spawner import Spawner
 from constants import *
-
+from ui import GameUI
 
 class BaseView(arcade.gui.view.UIView):
     def setup(self):
@@ -12,17 +12,10 @@ class BaseView(arcade.gui.view.UIView):
         self.spawner = Spawner(self)
         self.spawner.setup()
 
-        # UI
-
-        ui_layout = arcade.gui.UIAnchorLayout()
-        self.add_widget(ui_layout)
-
-        points_sidebar = arcade.gui.UIBoxLayout(align="right")
-        ui_layout.add(points_sidebar, anchor_x="right", anchor_y="top")
+        self.gui = GameUI()
+        self.add_widget(self.gui)
 
         self.bubble_points = 0
-        self.BP_label = arcade.gui.UILabel(text = "0 BP")
-        points_sidebar.add(self.BP_label)
 
     def on_update(self, dt):
         self.spawner.spawn_things(dt)
