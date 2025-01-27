@@ -2,9 +2,10 @@
 
 import arcade
 from views import BaseView
+from constants import *
 
 def main():
-    window = arcade.Window()
+    window = arcade.Window(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE)
     view = BaseView()
     view.setup()
     window.show_view(view)
