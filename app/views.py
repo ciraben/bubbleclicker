@@ -11,8 +11,18 @@ class BaseView(arcade.gui.view.UIView):
         new_bubble.position = self.center
         self.bubbles.append(new_bubble)
 
-        points_label = arcade.gui.UIDummy()
-        self.add_widget(points_label)
+        # UI
+
+        ui_layout = arcade.gui.UIAnchorLayout()
+        self.add_widget(ui_layout)
+
+        points_sidebar = arcade.gui.UIBoxLayout(align="right")
+        ui_layout.add(points_sidebar, anchor_x="right", anchor_y="top")
+
+        self.points_label = arcade.gui.UILabel(text = "0 BP")
+        self.points_label_2 = arcade.gui.UILabel(text = "343 BP")
+        points_sidebar.add(self.points_label)
+        points_sidebar.add(self.points_label_2)
 
     def on_update(self, dt):
         self.bubbles.update(dt)
