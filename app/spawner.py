@@ -1,5 +1,7 @@
 import arcade
 from bubbles import BasicBubble
+from constants import *
+import random
 
 class Spawner():
     def __init__(self, view):
@@ -17,5 +19,5 @@ class Spawner():
 
     def spawn_soap_bubble(self):
         new_bubble = BasicBubble()
-        new_bubble.position = self.view.center
+        new_bubble.position = (random.randint(0, WINDOW_WIDTH), random.randint(0, WINDOW_HEIGHT))
         self.view.bubbles.append(new_bubble)
