@@ -38,6 +38,6 @@ class BaseView(arcade.gui.view.UIView):
         clicked_bubbles = arcade.get_sprites_at_point((x, y), self.bubbles)
         for bubble in clicked_bubbles:
             bubble.remove_from_sprite_lists()
-            self.bubble_points += 1
+            self.bubble_points += BASE_POINT_VALUE
             arcade.play_sound(random.choice(bubblepopsound))
         self.BP_label.text = f"{self.bubble_points} BP"
