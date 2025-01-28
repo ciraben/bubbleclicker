@@ -16,6 +16,10 @@ class GameUI(arcade.gui.UIAnchorLayout):
             ShopMenu()
         )
 
+        @self.shop_bottombar.bubble_shop_button.event("on_click")
+        def toggle_menu(event):
+            self.shop_menu.toggle()
+
 class PointsSidebar(arcade.gui.UIBoxLayout):
     def __init__(self):
         super().__init__(align = "right")
@@ -39,6 +43,11 @@ class ShopMenu(arcade.gui.UIBoxLayout):
         self.add(arcade.gui.UILabel(text = self.title, font_size = UI_MENU_TITLE_FONTSIZE))
         self.add(arcade.gui.UISpace(height = UI_MENU_VERTICAL_SPACE_AFTER_TITLE))
         self.add(ShopItems())
+
+        self.visible = False
+
+    def toggle(self):
+        self.visible = not self.visible
 
 class ShopItems(arcade.gui.UIBoxLayout):
     def __init__(self):
