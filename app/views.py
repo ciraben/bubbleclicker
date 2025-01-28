@@ -33,4 +33,4 @@ class BaseView(arcade.gui.view.UIView):
             bubble.remove_from_sprite_lists()
             self.bubble_points += BASE_POINT_VALUE
             arcade.play_sound(random.choice(bubblepopsound))
-        self.BP_label.text = f"{self.bubble_points} BP"
+        self.gui.points_sidebar.bp_label.text = f"{self.bubble_points} BP"
