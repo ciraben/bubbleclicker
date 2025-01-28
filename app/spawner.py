@@ -13,7 +13,7 @@ class Spawner():
 
     def spawn_things(self, dt):
         self.elapsed_time_since_last_bubble += dt
-        if self.elapsed_time_since_last_bubble > 1:
+        if self.elapsed_time_since_last_bubble > BASE_SPAWN_RATE:
             self.spawn_soap_bubble()
             self.elapsed_time_since_last_bubble = 0
 
