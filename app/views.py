@@ -1,5 +1,6 @@
 import arcade
 import arcade.gui
+import random
 from spawner import Spawner
 from constants import *
 
@@ -38,5 +39,5 @@ class BaseView(arcade.gui.view.UIView):
         for bubble in clicked_bubbles:
             bubble.remove_from_sprite_lists()
             self.bubble_points += 1
-            arcade.play_sound(bubblepopsound)
+            arcade.play_sound(random.choice(bubblepopsound))
         self.BP_label.text = f"{self.bubble_points} BP"
